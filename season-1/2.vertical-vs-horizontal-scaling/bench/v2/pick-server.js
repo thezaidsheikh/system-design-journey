@@ -28,6 +28,7 @@ const ALLOWED_SERVERS = {
   "01-node": "NodeJS Bare",
   "02-express": "Express.js",
   "03-fastify": "Fastify",
+  "04-nestjs": "Nest Fastify",
   "05-go": "Go",
 };
 
@@ -38,6 +39,7 @@ const NGINX_PREFIX = {
   "01-node": "/node",
   "02-express": "/express",
   "03-fastify": "/fastify",
+  "04-nestjs": "/nestjs",
   "05-go": "/go",
 };
 
@@ -144,10 +146,7 @@ const encoding = chosen.nginx
   : null;
 
 const url = `${chosen.base}/products?limit=10`;
-p.note(
-  `${chosen.label}${encoding ? ` | ${encoding}` : ""}\n${url}`,
-  "Running",
-);
+p.note(`${chosen.label}${encoding ? ` | ${encoding}` : ""}\n${url}`, "Running");
 
 const k6Env = ["-e", `URL=${url}`];
 if (encoding) k6Env.push("-e", `ENCODING=${encoding}`);

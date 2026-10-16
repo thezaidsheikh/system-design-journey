@@ -4,5 +4,6 @@ export const SERVERS = [
   { name: "node", label: "NodeJS Bare", port: 5001 },
   { name: "express", label: "Express.js", port: 5002 },
   { name: "fastify", label: "Fastify", port: 5003 },
+  { name: "nest", label: "Nest Fastify", port: 5004 },
   { name: "go", label: "Go", port: 5005 },
-]
+];
